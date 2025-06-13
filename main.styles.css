@@ -44,6 +44,7 @@ body {
   justify-content: center;
   flex-wrap: nowrap;
   min-width: 0;
+  overflow: hidden;
 }
 
 /* Arrow Buttons */
@@ -83,7 +84,8 @@ body {
   border: 1px solid var(--searchborder-color);
   border-radius: 5px;
   padding: 0.4rem 1rem;
-  min-width: 500px;  /* smaller width */
+  flex-shrink: 1;
+  min-width: 0;  /* smaller width */
   max-width: 100%;   /* don't overflow container */
 }
 
