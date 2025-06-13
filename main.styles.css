@@ -85,7 +85,7 @@ body {
   border-radius: 5px;
   padding: 0.4rem 1rem;
   flex-shrink: 1;
-  min-width: 0;  /* smaller width */
+  min-width: 500px;  /* smaller width */
   max-width: 100%;   /* don't overflow container */
 }
 
@@ -123,6 +123,9 @@ body {
     font-size: 10px;
   }
   .navbar__right-control {
+    display: none;
+  }
+  .navbar__left-buttons {
     display: none;
   }
 }
