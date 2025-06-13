@@ -42,7 +42,8 @@ body {
   gap: 1rem;
   flex: 1;
   justify-content: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 /* Arrow Buttons */
@@ -126,21 +127,89 @@ body {
 
 @media (max-width: 400px) {
   .navbar {
-    flex-wrap: wrap; 
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
   }
 
+  /* Keep logo on the left */
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin: 0;
+  }
+
+  /* Hide arrows */
   .navbar__left-buttons {
-    margin-bottom: 0.5rem;
+    display: none;
+  }
+
+  /* Hide right icons */
+  .navbar__right-control {
+    display: none;
+  }
+
+  /* Keep logo and search on same row */
+  .navbar__center-group {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    overflow: hidden;
   }
 
   .navbar__search-wrapper {
-    width: 100%;
+    flex: 1;
+    justify-content: flex-start;
   }
 
   .search-box {
-    min-width: 100%;
+    width: 100%;
+    padding: 0.3rem 0.5rem;
+    min-width: 0; /* allow shrinking */
+    margin: 5px 10px;
   }
+
+  .search-text {
+    font-size: 10px;
+  }
+}
+@media (max-width: 800px) and (min-width: 401px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* logo+arrows left, search center, right controls right */
+    flex-wrap: nowrap;
+  }
+
+  /* Group logo and arrows on left side */
+  .navbar__left-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  /* Hide wrapping */
+  .navbar__center-group {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    min-width: 300px;  /* prevent shrinking */
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 400px;
+    flex-shrink: 0;
+    min-width: 300px;
+  }
+
   .navbar__right-control {
-    display: none;
+    flex-shrink: 0;
   }
 }
