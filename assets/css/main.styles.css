@@ -1,0 +1,146 @@
+:root {
+  --navbar-bg: #171717;
+  --search-bg: #1e1e1e;
+  --border-color: #2e2e2e;
+  --searchborder-color: #454545;
+  --arrow-color: #4f4f4f;
+  --text-color: #ccc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--navbar-bg);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Main Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* keep everything in one row */
+  padding: 0.5rem 1rem;
+  background-color: var(--navbar-bg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Logo Container */
+.navbar__logo img {
+  height: 20px;
+  width: auto;
+}
+
+/* Arrows + Search Bar */
+.navbar__center-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Arrow Buttons */
+.navbar__left-buttons {
+  display: flex;
+  gap: 0.3rem;
+  margin-right: 10px;
+  flex-shrink: 0; /* prevent shrinking */
+}
+
+.navbar__left-buttons .arrow-btn:hover {
+  background-color: rgba(255, 255, 255, 0.096);
+  border-radius: 4px;
+}
+
+.arrow-btn {
+  background: none;
+  border: none;
+  color: var(--arrow-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+/* Search Box */
+.navbar__search-wrapper {
+  display: flex;
+  align-items: center;
+  flex-shrink: 1; /* allow shrinking */
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--search-bg);
+  border: 1px solid var(--searchborder-color);
+  border-radius: 5px;
+  padding: 0.4rem 1rem;
+  min-width: 500px;  /* smaller width */
+  max-width: 100%;   /* don't overflow container */
+}
+
+.search-box > *:first-child {
+  margin-right: 0.3rem;
+}
+
+.search-icon {
+  color: var(--text-color);
+}
+
+.search-text {
+  color: var(--text-color);
+  font-size: 12px;
+}
+.navbar__right-control {
+  display: flex;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+
+.navbar__right-control img {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+  cursor: pointer;
+}
+@media (max-width: 700px) {
+  .search-box {
+    min-width: 250px;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .search-text {
+    font-size: 10px;
+  }
+  .navbar__right-control {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    flex-wrap: wrap; 
+  }
+
+  .navbar__left-buttons {
+    margin-bottom: 0.5rem;
+  }
+
+  .navbar__search-wrapper {
+    width: 100%;
+  }
+
+  .search-box {
+    min-width: 100%;
+  }
+  .navbar__right-control {
+    display: none;
+  }
+}
